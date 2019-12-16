@@ -21,7 +21,6 @@ import java.awt.Color;
 public class AnalyzePlayerForm {
 
 	private JFrame frmAnalyzeTeam;
-	//private PlayerEvaluator pe;
 	private TextReader tr;
 
 	/**
@@ -214,7 +213,7 @@ public class AnalyzePlayerForm {
 			break;
 		}
 		if("123456".contains(playerName)) {
-			img = new ImageIcon(this.getClass().getResource("\\Players\\Special/"+playerName+".png")).getImage();
+			img = new ImageIcon(this.getClass().getResource("\\Players/"+playerName+".png")).getImage();
 		}
 		else {
 			img = new ImageIcon(this.getClass().getResource("\\Players/"+playerName+".png")).getImage();

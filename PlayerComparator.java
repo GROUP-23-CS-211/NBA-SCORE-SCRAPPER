@@ -1,11 +1,9 @@
-import java.util.*;
+//import java.util.*;
 
 public class PlayerComparator extends Comparator {
 	  public PlayerComparator(){
 		    super();
 	  }
-		  
-		  @SuppressWarnings("unchecked")
 		  
 		  public String compare(String player1, String player2, String statCategory){
 		    String result = "";

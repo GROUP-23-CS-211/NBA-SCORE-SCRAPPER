@@ -6,9 +6,9 @@ public class PlayerEvaluator extends Evaluator {
 	   
 	   //Return a players rank in each stat type given player name
 	   @Override
-	   public ArrayList evaluate(String player) {
-	      ArrayList ans = new ArrayList();
-	      TextReader tr = new TextReader();
+	   public ArrayList<String> evaluate(String player) {
+	      ArrayList<String> ans = new ArrayList<String>();
+	      //TextReader tr = new TextReader();
 	      
 	      String stats[] = {"PPG", "RPG", "APG", "FGP", "FTP", "PER"};
 	      
@@ -21,15 +21,16 @@ public class PlayerEvaluator extends Evaluator {
 	   }
 	   
 	   //Return a players rank in each stat type given player rank
-	   public ArrayList evaluate(int rank) {
-	      ArrayList ans = new ArrayList();
+	   public ArrayList<String> evaluate(int rank) {
+	      ArrayList<String> ans = new ArrayList<String>();
 	      
 	      TextReader tr = new TextReader();
-	      ArrayList players = tr.getStat("PLAYER");
+	      ArrayList<String> players = tr.getStat("PLAYER");
 	      
 	      String player = players.get(rank).toString();
 	      
-	      ans.add(evaluate(player));
+	      //ans.add(evaluate(player));
+	      ans = evaluate(player);
 	      return ans;
 	   }
 	   
@@ -41,8 +42,8 @@ public class PlayerEvaluator extends Evaluator {
 	      
 	      //Formatting
 	      String alps = tr.getPlayerStat(player, statType);
-	      ArrayList allStat = tr.getStat(statType);
-	      ArrayList allStats = new ArrayList();
+	      ArrayList<String> allStat = tr.getStat(statType);
+	      ArrayList<Double> allStats = new ArrayList<Double>();
 	      
 	      String sps = alps.toString();
 	      //Remove brackets from array inputs
@@ -77,7 +78,7 @@ public class PlayerEvaluator extends Evaluator {
 	   }
 	   
 	   public static void main(String [] args) {
-	      TextReader tr = new TextReader();
+	      //TextReader tr = new TextReader();
 	      
 	      PlayerEvaluator pe = new PlayerEvaluator();
 	      System.out.println(pe.evaluate(1));

@@ -20,9 +20,6 @@ public class TeamComparator extends Comparator{
     * Each player's talent score is 101 minus their rank. 
     * Sum the talent scores, determine which team has a higher overall talent score, and use proportions to find odds.
     */
-  
-  @SuppressWarnings("unchecked")
-  
   public String compare(String homeTeam, String awayTeam){
     int homeTeamTotalTalentScore = 0;
     int awayTeamTotalTalentScore = 0;
@@ -34,14 +31,14 @@ public class TeamComparator extends Comparator{
       //ArrayList<String> playerStatArray = t.getPlayerStat(player, "RANK");
       String stringRank = t.getPlayerStat(player, "RANK"); //= playerStatArray.get(0);
       int rank = Integer.parseInt(stringRank);
-      int playerTalentScore = 101 - rank;
+      int playerTalentScore = 1 - rank;
       homeTeamTotalTalentScore += playerTalentScore;}
     
     for (String player: awayTeamPlayers){
       /*ArrayList<String>*/String playerStatArray = t.getPlayerStat(player, "RANK");
       String stringRank = playerStatArray;//playerStatArray.get(0);
       int rank = Integer.parseInt(stringRank);
-      int playerTalentScore = 101 - rank;
+      int playerTalentScore = 1 - rank;
       awayTeamTotalTalentScore += playerTalentScore;}
     
     int sum = homeTeamTotalTalentScore + awayTeamTotalTalentScore;

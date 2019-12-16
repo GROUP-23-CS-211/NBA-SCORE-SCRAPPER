@@ -5,16 +5,16 @@ public class TeamEvaluator extends Evaluator {
    //Default constructor
    public TeamEvaluator() {}
    
-   //Given team name return all players on NBA Top 100 and their statistics 
+   //Given team name return all players on NBA Top 100 and their statistics
    @Override
-   public ArrayList evaluate(String team) {
+   public ArrayList<String> evaluate(String team) {
 	      //What is being returned
-	      ArrayList ans = new ArrayList();
+	      ArrayList<String> ans = new ArrayList<String>();
 	      
 	      //Access data from text document using TextReader class
 	      TextReader reader = new TextReader();
-	      ArrayList<String> players = new ArrayList<String>();
-	      players = reader.getPlayersByTeam(team);  //Get all players on given team
+	      ArrayList<String> players = reader.getPlayersByTeam(team);//new ArrayList<String>();
+	      //players = reader.getPlayersByTeam(team);  //Get all players on given team
 	      
 	      /*
 	      //Loop through each player on team in the NBA Top 100
